@@ -28,19 +28,30 @@ export class PasswordChecker {
 
         const reasons:PasswordErrors[] = [];
 
-        if (password.length < 8) {
-            reasons.push(PasswordErrors.SHORT);
-        }
-        if (password == password.toLowerCase()) {
-            reasons.push(PasswordErrors.NO_UPPER_CASE);
-        }
-        if (password == password.toUpperCase()) {
-            reasons.push(PasswordErrors.NO_LOWER_CASE
-            );
-        }
+        this.checkForLength(password, reasons);
+        this.checkForUpperCase(password, reasons);
+        this.checkForLowerCase(password, reasons);
         return {
             valid: reasons.length > 0 ? false : true,
             reasons: reasons
         };
+    }
+
+    private checkForLength(password: string, reasons: PasswordErrors[]) {
+        if (password.length < 8) {
+            reasons.push(PasswordErrors.SHORT);
+        }
+    }
+
+    private checkForUpperCase(password: string, reasons: PasswordErrors[]) {
+        if (password == password.toLocaleLowerCase()) {
+            reasons.push(PasswordErrors.NO_UPPER_CASE);
+        }
+    }
+
+    private checkForLowerCase(password: string, reasons: PasswordErrors[]) {
+        if (password == password.toLocaleUpperCase()) {
+            reasons.push(PasswordErrors.NO_LOWER_CASE);
+        }
     }
 }
