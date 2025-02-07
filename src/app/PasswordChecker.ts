@@ -15,7 +15,8 @@
 export enum PasswordErrors {
     SHORT = 'Password is too short!',
     NO_UPPER_CASE = 'Upper case letter required!',
-    NO_LOWER_CASE = 'Lower case letter required!'
+    NO_LOWER_CASE = 'Lower case letter required!',
+    NO_NUMBER = 'At least one number required!'    
 }
 
 export interface CheckResult {
@@ -24,6 +25,7 @@ export interface CheckResult {
 }
 
 export class PasswordChecker {
+    
     public checkPassword(password: string): CheckResult{
 
         const reasons:PasswordErrors[] = [];
@@ -32,9 +34,13 @@ export class PasswordChecker {
         this.checkForUpperCase(password, reasons);
         this.checkForLowerCase(password, reasons);
         return {
-            valid: reasons.length > 0 ? false : true,
+            valid: !reasons.length,
             reasons: reasons
         };
+    }
+
+    public checkAdminPassword(password: string): CheckResult {
+        return {} as any;
     }
 
     private checkForLength(password: string, reasons: PasswordErrors[]) {
