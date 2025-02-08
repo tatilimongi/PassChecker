@@ -1,8 +1,8 @@
 # Password Checker
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/tatilimongi/PassChecker)
-![GitHub last commit](https://img.shields.io/github/last-commit/tatilimongi/PassChecker)
-![GitHub license](https://img.shields.io/github/license/tatilimongi/PassChecker)
+![License](https://img.shields.io/github/license/tatilimongi/PassChecker?style=flat-square)
+![Languages](https://img.shields.io/github/languages/top/tatilimongi/PassChecker)
 ![Node Version](https://img.shields.io/node/v/jest)
 
 
