@@ -40,7 +40,19 @@ export class PasswordChecker {
     }
 
     public checkAdminPassword(password: string): CheckResult {
-        return {} as any;
+        const basicCheck = this.checkPassword(password);
+        this.checkForNumber(password, basicCheck.reasons);
+        return {
+            valid: !basicCheck.reasons.length,
+            reasons: basicCheck.reasons
+        }
+    }
+
+    private checkForNumber(password: string, reasons: PasswordErrors[]) {
+        const hasNumber = /\d/;
+        if (!hasNumber.test(password)) {
+            reasons.push(PasswordErrors.NO_NUMBER);
+        }
     }
 
     private checkForLength(password: string, reasons: PasswordErrors[]) {
