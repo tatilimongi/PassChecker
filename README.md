@@ -3,8 +3,9 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/tatilimongi/PassChecker)
 ![GitHub last commit](https://img.shields.io/github/last-commit/tatilimongi/PassChecker)
 ![GitHub license](https://img.shields.io/github/license/tatilimongi/PassChecker)
-![GitHub issues](https://img.shields.io/github/issues/tatilimongi/PassChecker)
-![Codecov](https://img.shields.io/codecov/c/github/tatilimongi/PassChecker)
+![Node Version](https://img.shields.io/node/v/jest)
+
+
 
 ## Description
 This project is a **Password Checker** implemented in **TypeScript**. It was developed as an exercise to practice **Test-Driven Development (TDD)** and **Jest** for unit testing.
